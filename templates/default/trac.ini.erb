@@ -6,10 +6,10 @@ render_unsafe_content = false
 
 [browser]
 color_scale = True
-downloadable_paths = * 
+downloadable_paths = *
 hide_properties = svk:merge
-intermediate_color = 
-intermediate_point = 
+intermediate_color =
+intermediate_point =
 newest_color = (255, 136, 136)
 oldest_color = (136, 136, 255)
 oneliner_properties = trac:summary
@@ -24,13 +24,13 @@ wiki_format_messages = true
 [header_logo]
 alt = (please configure the [header_logo] section in trac.ini)
 height = -1
-link = 
+link =
 src = site/your_project_logo.png
 width = -1
 
 [inherit]
-plugins_dir = 
-templates_dir = 
+plugins_dir =
+templates_dir =
 
 [logging]
 log_file = trac.log
@@ -48,36 +48,36 @@ max_preview_size = 262144
 mime_map = text/x-dylan:dylan,text/x-idl:ice,text/x-ada:ads:adb
 php_path = php
 pygments_default_style = trac
-pygments_modes = 
+pygments_modes =
 tab_width = 8
 treat_as_binary = application/octet-stream,application/pdf,application/postscript,application/rtf
 
 [notification]
-admit_domains = 
+admit_domains =
 always_notify_owner = false
 always_notify_reporter = false
 always_notify_updater = true
-ignore_domains = 
+ignore_domains =
 mime_encoding = none
-smtp_always_bcc = 
-smtp_always_cc = 
-smtp_default_domain = 
+smtp_always_bcc =
+smtp_always_cc =
+smtp_default_domain =
 smtp_enabled = false
-smtp_from = trac@<%= @node[:domain] %>
-smtp_from_name = 
-smtp_password = 
+smtp_from = trac@<%= @node['domain'] %>
+smtp_from_name =
+smtp_password =
 smtp_port = 25
-smtp_replyto = trac@<%= @node[:domain] %>
+smtp_replyto = trac@<%= @node['domain'] %>
 smtp_server = localhost
 smtp_subject_prefix = __default__
-smtp_user = 
+smtp_user =
 ticket_subject_template = $prefix #$ticket.id: $summary
 use_public_cc = false
 use_short_addr = false
 use_tls = false
 
 [project]
-admin = 
+admin =
 admin_trac_url = .
 descr = <%= @trac_project_desc %>
 footer = Visit the Trac open source project at<br /><a href="http://trac.edgewall.org/">http://trac.edgewall.org/</a>
@@ -108,18 +108,18 @@ branches = <%= @trac_svn_branches.join(',') %>
 tags = <%= @trac_svn_tags.join(',') %>
 
 [ticket]
-default_cc = 
-default_component = 
-default_description = 
-default_keywords = 
-default_milestone = 
-default_owner = 
+default_cc =
+default_component =
+default_description =
+default_keywords =
+default_milestone =
+default_owner =
 default_priority = major
 default_resolution = fixed
-default_severity = 
-default_summary = 
+default_severity =
+default_summary =
 default_type = defect
-default_version = 
+default_version =
 max_comment_size = 262144
 max_description_size = 262144
 preserve_newlines = default
@@ -154,16 +154,16 @@ newticket_formatter = oneliner
 ticket_show_details = false
 
 [trac]
-authz_file = 
-authz_module_name = 
+authz_file =
+authz_module_name =
 auto_reload = False
 backup_dir = db
-base_url = 
+base_url =
 check_auth_ip = false
 database = sqlite:db/trac.db
 debug_sql = False
 default_charset = iso-8859-15
-htdocs_location = 
+htdocs_location =
 ignore_auth_case = false
 mainnav = <%= @trac_mainnav.join(',') %>
 metanav = <%= @trac_metanav.join(',') %>

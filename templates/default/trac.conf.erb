@@ -1,15 +1,15 @@
 <VirtualHost *:80>
    DocumentRoot <%= @trac_dir %>
-   ServerAdmin ops@<%= @node[:domain] %>
+   ServerAdmin ops@<%= @node['domain'] %>
    ServerName <%=@trac_vhosts.first %>
    <% @trac_vhosts.each do | vhost | %>
    ServerAlias <%=vhost%>
    <% end %>
-   
+
    ErrorLog /var/log/apache2/trac-error.log
    TransferLog /var/log/apache2/trac-access.log
 
-   #DefaultMaxClassProcessCount 5 
+   #DefaultMaxClassProcessCount 5
 
    Alias / <%= @trac_dir %>/cgi-bin/trac.fcgi/
 
@@ -30,11 +30,11 @@
         <% @trac_required_groups.each do |group| %>
         require ldap-group <%= group %>
         <% end -%>
-        
-        require valid-user             
+
+        require valid-user
       </Location>
    </IfModule>
-   
+
    # / is aliased to fastcgi above
    <Directory "/usr/share/pyshared/trac/htdocs">
      Order allow,deny
