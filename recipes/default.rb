@@ -23,7 +23,7 @@ include_recipe "apache2::mod_fcgid"
 include_recipe "apache2::mod_deflate"
 
 package "trac" do
-  action :upgrade
+  action :install
 end
 
 directory node[:trac][:basedir] do
