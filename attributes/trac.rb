@@ -15,14 +15,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-default[:trac] = {}
-default[:trac][:project_name] = "Code :: Trac"
-default[:trac][:project_description] = ""
-default[:trac][:basedir] = "/srv/trac"
-default[:trac][:mainnav] = ["wiki","timeline","roadmap","browser","tickets","newticket","search"]
-default[:trac][:metanav] = ["login","logout","prefs","help","about"]
-default[:trac][:vhosts] = [fqdn]
-default[:trac][:required_groups] = []
-default[:trac][:svn_dir] = "/srv/svn/code-trac"
-default[:trac][:svn_branches] = [""]
-default[:trac][:svn_tags] = [""]
+
+default['trac']['project_name'] = "Code :: Trac"
+default['trac']['project_description'] = ""
+default['trac']['basedir'] = "/srv/trac"
+default['trac']['mainnav'] = ["wiki","timeline","roadmap","browser","tickets","newticket","search"]
+default['trac']['metanav'] = ["login","logout","prefs","help","about"]
+default['trac']['vhosts'] = [node['fqdn']]
+default['trac']['required_groups'] = []
+default['trac']['svn_dir'] = "/srv/svn/code-trac"
+default['trac']['svn_branches'] = [""]
+default['trac']['svn_tags'] = [""]

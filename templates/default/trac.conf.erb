@@ -1,6 +1,6 @@
 <VirtualHost *:80>
    DocumentRoot <%= @trac_dir %>
-   ServerAdmin ops@<%= @node['domain'] %>
+   ServerAdmin ops@<%= node['domain'] %>
    ServerName <%=@trac_vhosts.first %>
    <% @trac_vhosts.each do | vhost | %>
    ServerAlias <%=vhost%>
