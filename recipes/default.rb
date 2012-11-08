@@ -22,21 +22,20 @@ include_recipe "apache2::mod_rewrite"
 include_recipe "apache2::mod_fcgid"
 include_recipe "apache2::mod_deflate"
 
-
 package "trac" do
-  action :upgrade
+  action :install
 end
 
 directory node[:trac][:basedir] do
   owner "root"
   group "root"
-  mode 0755
+  mode 00755
 end
 
 directory "#{node[:trac][:basedir]}/cgi-bin" do
   owner "root"
   group "root"
-  mode 0755
+  mode 00755
 end
 
 template "trac-fcgi" do
@@ -44,7 +43,7 @@ template "trac-fcgi" do
   source "trac.fcgi.erb"
   owner "root"
   group "root"
-  mode 0755
+  mode 00755
   variables(
     :trac_environment => "#{node[:trac][:basedir]}/environment"
   )
@@ -88,7 +87,7 @@ template "trac-conf" do
   source "trac.conf.erb"
   owner "root"
   group "root"
-  mode 0644
+  mode 00644
   variables(
     :trac_dir => node[:trac][:basedir],
     :trac_project_name => node[:trac][:project_name],
