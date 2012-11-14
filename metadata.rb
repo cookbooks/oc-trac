@@ -1,3 +1,4 @@
+name             "trac"
 maintainer       "Peter Crossley"
 maintainer_email "peterc@xley.com"
 license          "Apache 2.0"
